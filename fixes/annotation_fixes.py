@@ -1512,4 +1512,91 @@ ANNOTATION_FIXES: List[Union[AnnotationFix, AddAnnotationFix]] = [
             FixParameter("passPhrase", "typing.Union[QtCore.QByteArray, bytes, bytearray]", "QtCore.QByteArray"),
         ],
     ),
+
+    #{ mimeData fixes
+    AnnotationFix(
+        "QtCore",
+        "QAbstractItemModel",
+        "mimeData",
+        [
+            FixParameter("indexes", "typing.Iterable[QModelIndex]", "typing.Iterable[QModelIndex]"),
+        ],
+        return_value = 'typing.Optional["QMimeData"]',
+    ),
+
+    AnnotationFix(
+        "QtCore",
+        "QAbstractProxyModel",
+        "mimeData",
+        [
+            FixParameter("indexes", "typing.Iterable[QModelIndex]", "typing.Iterable[QModelIndex]"),
+        ],
+        return_value = 'typing.Optional["QMimeData"]',
+    ),
+    AnnotationFix(
+        "QtCore",
+        "QConcatenateTablesProxyModel",
+        "mimeData",
+        [
+            FixParameter("indexes", "typing.Iterable[QModelIndex]", "typing.Iterable[QModelIndex]"),
+        ],
+        return_value = 'typing.Optional["QMimeData"]',
+    ),
+    AnnotationFix(
+        "QtCore",
+        "QSortFilterProxyModel",
+        "mimeData",
+        [
+            FixParameter("indexes", "typing.Iterable[QModelIndex]", "typing.Iterable[QModelIndex]"),
+        ],
+        return_value = 'typing.Optional["QMimeData"]',
+    ),
+
+    AnnotationFix(
+        "QtGui",
+        "QFileSystemModel",
+        "mimeData",
+        [
+            FixParameter("indexes", "typing.Iterable[QtCore.QModelIndex]", "typing.Iterable[QtCore.QModelIndex]"),
+        ],
+        return_value = "typing.Optional[QtCore.QMimeData]",
+    ),
+    AnnotationFix(
+        "QtGui",
+        "QStandardItemModel",
+        "mimeData",
+        [
+            FixParameter("indexes", "typing.Iterable[QtCore.QModelIndex]", "typing.Iterable[QtCore.QModelIndex]"),
+        ],
+        return_value = "typing.Optional[QtCore.QMimeData]",
+    ),
+
+    AnnotationFix(
+        "QtWidgets",
+        "QListWidget",
+        "mimeData",
+        [
+            FixParameter("items", "typing.Iterable[QListWidgetItem]", "typing.Iterable[QListWidgetItem]"),
+        ],
+        return_value = "typing.Optional[QtCore.QMimeData]",
+    ),
+    AnnotationFix(
+        "QtWidgets",
+        "QTableWidget",
+        "mimeData",
+        [
+            FixParameter("items", "typing.Iterable[QTableWidgetItem]", "typing.Iterable[QTableWidgetItem]"),
+        ],
+        return_value = "typing.Optional[QtCore.QMimeData]",
+    ),
+    AnnotationFix(
+        "QtWidgets",
+        "QTreeWidget",
+        "mimeData",
+        [
+            FixParameter("items", "typing.Iterable[QTreeWidgetItem]", "typing.Iterable[QTreeWidgetItem]"),
+        ],
+        return_value = "typing.Optional[QtCore.QMimeData]",
+    ),
+    #}
 ]
