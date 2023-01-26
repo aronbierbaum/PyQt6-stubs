@@ -1599,4 +1599,40 @@ ANNOTATION_FIXES: List[Union[AnnotationFix, AddAnnotationFix]] = [
         return_value = "typing.Optional[QtCore.QMimeData]",
     ),
     #}
+
+    #{ setParent fixes
+    AnnotationFix(
+        "QtCore",
+        "QObject",
+        "setParent",
+        [
+            FixParameter("a0", 'typing.Optional["QObject"]', '"QObject"'),
+        ],
+    ),
+    AnnotationFix(
+        "QtGui",
+        "QWindow",
+        "setParent",
+        [
+            FixParameter("parent", 'typing.Optional["QWindow"]', '"QWindow"'),
+        ],
+    ),
+    AnnotationFix(
+        "QtWidgets",
+        "QWidget",
+        "setParent",
+        [
+            FixParameter("parent", 'typing.Optional["QWidget"]', '"QWidget"'),
+        ],
+    ),
+    AnnotationFix(
+        "QtWidgets",
+        "QWidget",
+        "setParent",
+        [
+            FixParameter("parent", 'typing.Optional["QWidget"]', '"QWidget"'),
+            FixParameter("f", "QtCore.Qt.WindowType", "QtCore.Qt.WindowType"),
+        ],
+    ),
+    #}
 ]
