@@ -1635,4 +1635,31 @@ ANNOTATION_FIXES: List[Union[AnnotationFix, AddAnnotationFix]] = [
         ],
     ),
     #}
+
+    #{ isAncestorOf fixes
+    AnnotationFix(
+        "QtWidgets",
+        "QWidget",
+        "isAncestorOf",
+        [
+            FixParameter("child", 'typing.Optional["QWidget"]', '"QWidget"'),
+        ],
+    ),
+    AnnotationFix(
+        "QtWidgets",
+        "QGraphicsItem",
+        "isAncestorOf",
+        [
+            FixParameter("child", 'typing.Optional["QGraphicsItem"]', '"QGraphicsItem"'),
+        ],
+    ),
+    AnnotationFix(
+        "QtQuick",
+        "QQuickItem",
+        "isAncestorOf",
+        [
+            FixParameter("child", 'typing.Optional["QQuickItem"]', '"QQuickItem"'),
+        ],
+    ),
+    #}
 ]
